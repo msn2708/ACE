@@ -1,0 +1,3 @@
+boolean (IsTrainLate) {
+  description (__DESCRIPTION__)
+}

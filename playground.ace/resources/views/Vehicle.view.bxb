@@ -1,0 +1,25 @@
+result-view {
+  match {
+    Vehicle (this)
+  }
+
+  render {
+    if ("size(this) > 1") {
+      list-of (this) {
+        where-each (train) {
+          layout-macro (train-summary) {
+            param (train) {
+              expression (train)
+            }
+          }
+        }
+      }
+    } else-if ("size(this) == 1") {
+      layout-macro (train-summary) {
+        param (train) {
+          expression (this)
+        }
+      }
+    }
+  }
+}

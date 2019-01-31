@@ -1,0 +1,11 @@
+// action (IsMyTrainLate) {
+//   type(Search)
+//   description (__DESCRIPTION__)
+//   collect {
+//     input (trainNumber) {
+//       type (ScheduleNumber)
+//       min (Required) max (One)
+//     }
+//   }
+//   output (IsTrainLate)
+// }

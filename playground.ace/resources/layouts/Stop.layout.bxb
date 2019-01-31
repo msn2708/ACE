@@ -1,0 +1,14 @@
+layout-macro-def (stop-summary) {
+  match: Stop (this)
+  mode (Summary)
+
+  content {
+    section {
+      content {
+        paragraph {
+          value(this)
+        }
+      }
+    }
+  }
+}

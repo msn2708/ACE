@@ -1,0 +1,13 @@
+endpoints {
+  authorization {
+    none
+    // or add OAuth configuration
+  }
+
+  action-endpoints {
+    action-endpoint (GetVehicle) {
+      accepted-inputs (trainNumber)
+      local-endpoint ("getVehicles.js")
+    }
+  }
+}

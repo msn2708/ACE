@@ -1,0 +1,14 @@
+layout-macro-def (train-summary) {
+  match: Vehicle (this)
+  mode (Summary)
+
+  content {
+    section {
+      content {
+        paragraph {
+          value(this)
+        }
+      }
+    }
+  }
+}
