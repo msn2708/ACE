@@ -7,6 +7,9 @@ layout-macro-def (train-summary) {
       content {
         paragraph {
           value(this)
+          if(exists(value(this.minutesToNextStops))) {
+            value(this.minutesToNextStops)
+          }
         }
       }
     }

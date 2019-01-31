@@ -40,7 +40,7 @@ structure (Stop) {
     min (Optional) max (One)
   }
   
-  property (statusColor) {
+  property (statuscolor) {
     type (StatusColor)
     min (Optional) max (One)
   }

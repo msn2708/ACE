@@ -6,7 +6,7 @@ layout-macro-def (stop-summary) {
     section {
       content {
         paragraph {
-          value(this)
+          value (this)
         }
       }
     }
