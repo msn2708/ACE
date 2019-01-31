@@ -1,0 +1,3 @@
+integer (PatternStopID) {
+  description (__DESCRIPTION__)
+}

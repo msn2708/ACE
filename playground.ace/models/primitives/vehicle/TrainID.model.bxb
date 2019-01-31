@@ -1,0 +1,3 @@
+integer (TrainID) {
+  description (__DESCRIPTION__)
+}

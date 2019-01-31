@@ -1,0 +1,3 @@
+integer (StopID) {
+  description (__DESCRIPTION__)
+}

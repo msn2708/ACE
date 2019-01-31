@@ -1,0 +1,3 @@
+integer (NextStopETA) {
+  description (__DESCRIPTION__)
+}

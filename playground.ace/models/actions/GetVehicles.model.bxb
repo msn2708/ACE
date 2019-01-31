@@ -1,0 +1,11 @@
+action (GetVehicles) {
+  type(Search)
+  description (__DESCRIPTION__)
+  collect {
+    input (trainNumber) {
+      type (ScheduleNumber)
+      min (Optional) max (One)
+    }
+  }
+  output (Vehicle)
+}

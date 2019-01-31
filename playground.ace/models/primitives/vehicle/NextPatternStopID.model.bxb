@@ -1,0 +1,4 @@
+integer (NextPatternStopID) {
+  description (__DESCRIPTION__)
+  role-of (PatternStopID)
+}

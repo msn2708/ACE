@@ -1,0 +1,72 @@
+structure (Stop) {
+  description (__DESCRIPTION__)
+  property (blockID) {
+    type (BlockID)
+    min (Optional) max (One)
+  }
+  
+  property (stopID) {
+    type (StopID)
+    min (Optional) max (One)
+  }
+  
+  property (patternStopID) {
+    type (PatternStopID)
+    min (Optional) max (One)
+  }
+  
+  property (minutes) {
+    type (Minutes)
+    min (Optional) max (One)
+  }
+  
+  property (time) {
+    type (Time)
+    min (Optional) max (One)
+  }
+  
+  property (schedule) {
+    type (Schedule)
+    min (Optional) max (One)
+  }
+  
+  property (status) {
+    type (Status)
+    min (Optional) max (One)
+  }
+  
+  property (scheduleNumber) {
+    type (ScheduleNumber)
+    min (Optional) max (One)
+  }
+  
+  property (statusColor) {
+    type (StatusColor)
+    min (Optional) max (One)
+  }
+  
+  property (track) {
+    type (Track)
+    min (Optional) max (One)
+  }
+  
+  property (direction) {
+    type (Direction)
+    min (Optional) max (One)
+  }
+  
+  property (directionAbbr) {
+    type (DirectionAbbr)
+    min (Optional) max (One)
+  }
+  
+  property (equipmentID) {
+    type (EquipmentID)
+    min (Optional) max (One)
+  }
+  
+  property (routeID) {
+    type (RouteID)
+    min (Optional) max (One)
+  }
+}

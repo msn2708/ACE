@@ -1,0 +1,3 @@
+integer (InService) {
+  description (__DESCRIPTION__)
+}

@@ -1,0 +1,4 @@
+integer (NextStopID) {
+  description (__DESCRIPTION__)
+  role-of (StopID)
+}

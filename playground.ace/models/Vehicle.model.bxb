@@ -1,0 +1,116 @@
+structure (Vehicle) {
+  description (__DESCRIPTION__)
+  property (routeID) {
+    type (RouteID)
+    min (Optional) max (One)
+  }
+
+  property (patternID) {
+    type (PatternID)
+    min (Optional) max (One)
+  }
+
+  property (equipmentID) {
+    type (EquipmentID)
+    min (Optional) max (One)
+  }
+
+  property (tripID) {
+    type (TripID)
+    min (Optional) max (One)
+  }
+
+  property (lat) {
+    type (Lat) 
+    min (Optional) max (One)
+  }
+
+  property (lng) {
+    type (Lng) 
+    min (Optional) max (One)
+  }
+
+  property (load) {
+    type (Load) 
+    min (Optional) max (One)
+  }
+
+  property (capacity) {
+    type (Capacity)
+    min (Optional) max (One)
+  }
+
+  property (blockID) {
+    type (BlockID)
+    min (Optional) max (One)
+  }
+
+  property (nextStopID) {
+    type (NextStopID)
+    min (Optional) max (One)
+  }
+
+  property (nextStopETA) {
+    type (NextStopETA)
+    min (Optional) max (One)
+  }
+
+  property (nextPatternStopID) {
+    type (NextPatternStopID)
+    min (Optional) max (One)
+  }
+
+  property (scheduleNumber) {
+    type (ScheduleNumber)
+    min (Optional) max (One)
+  }
+
+  property (inService) {
+    type (InService)
+    min (Optional) max (One)
+  }
+
+  property (onSchedule) {
+    type (OnSchedule) min (Optional) max (One)
+  }
+
+  property (vehicleType) { 
+    type (VehicleType) 
+    min (Optional) max (One)
+  }
+
+  property (trainID) {
+    type (TrainID)
+    min (Optional) max (One)
+  }
+
+  property (receiveTime) {
+    type (ReceiveTime)
+    min (Optional) max (One)
+  }
+
+  property (deadHead) {
+    type (DeadHead)
+    min (Optional) max (One)
+  }
+
+  property (aID) {
+    type (AID) 
+    min (Optional) max (One)
+  }
+
+  property (minutesToNextStops) {
+    type (Stop) 
+    min (Optional) max (Many)
+  }
+
+  property (direction) {
+    type (Direction)
+    min (Optional) max (One)
+  }
+
+  property (directionAbbr) { 
+    type (DirectionAbbr) 
+    min (Optional) max (One)
+  }
+}

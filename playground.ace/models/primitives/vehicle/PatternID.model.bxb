@@ -1,0 +1,3 @@
+integer (PatternID) {
+  description (__DESCRIPTION__)
+}

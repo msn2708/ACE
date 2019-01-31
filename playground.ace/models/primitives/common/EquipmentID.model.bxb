@@ -1,0 +1,3 @@
+text (EquipmentID) {
+  description (__DESCRIPTION__)
+}

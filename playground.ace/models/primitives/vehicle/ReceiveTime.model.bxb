@@ -1,0 +1,3 @@
+integer (ReceiveTime) {
+  description (__DESCRIPTION__)
+}

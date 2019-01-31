@@ -1,0 +1,3 @@
+integer (Capacity) {
+  description (__DESCRIPTION__)
+}
