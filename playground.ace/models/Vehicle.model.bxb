@@ -100,7 +100,7 @@ structure (Vehicle) {
   }
 
   property (minutesToNextStops) {
-    type (Stop) 
+    type (NextStop) 
     min (Optional) max (Many)
   }
 

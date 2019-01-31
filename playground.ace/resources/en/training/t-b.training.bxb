@@ -1,5 +1,5 @@
 train (t-bv36imwe6z0asham8knvpl247) {
-  utterance ("[g:Vehicle] get status for train number (05)[v:ScheduleNumber]")
+  utterance ("[g:Vehicle] what is the status of train number (05)[v:ScheduleNumber]")
   plan (Y2BmECvISaxML8ovzUvRS0xO1QtLzchMzkllkEQTd08tgUnJokkFJ2ekppTmpPqV5ialFjEwMTACMQOQZGQAASYIBgA=)
-  last-modified (1548908895676)
+  last-modified (1548966991117)
 }
