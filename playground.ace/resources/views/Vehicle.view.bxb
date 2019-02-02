@@ -1,11 +1,9 @@
 result-view {
-  match {
-    Vehicle (this)
-  }
+  match: Vehicle (train)
 
   render {
-    if ("size(this) > 1") {
-      list-of (this) {
+    if (size(train) > 1) {
+      list-of (train) {
         where-each (train) {
           layout-macro (train-summary) {
             param (train) {
@@ -14,8 +12,8 @@ result-view {
           }
         }
       }
-    } else-if ("size(this) == 1") {
-      layout-macro (train-summary) {
+    } else-if (size(train) == 1) {
+      layout-macro (train-details) {
         param (train) {
           expression (this)
         }

@@ -1,5 +1,6 @@
 //return an array of objects according to key, value, or key and value matching
 function getObjects(obj, key, val) {
+  console.log ('Came here inside getObjects')
     var objects = [];
     for (var i in obj) {
         if (!obj.hasOwnProperty(i)) continue;

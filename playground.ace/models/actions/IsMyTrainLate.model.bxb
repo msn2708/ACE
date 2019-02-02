@@ -2,10 +2,10 @@ action (IsMyTrainLate) {
   type(Search)
   description (__DESCRIPTION__)
   collect {
-    input (trainNumber) {
-      type (ScheduleNumber)
+    input (myTrain) {
+      type (Vehicle)
       min (Required) max (One)
     }
   }
-  output (IsTrainLate)
+  output (LateMessage)
 }

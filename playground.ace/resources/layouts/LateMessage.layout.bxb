@@ -1,0 +1,24 @@
+layout-macro-def (late-message-details) {
+  match: LateMessage (this)
+  mode (Details)
+
+  content {
+    section {
+      content {
+        if ((this.train.onSchedule) < 0) {
+          paragraph {
+            value ("#{value(this.train.scheduleNumber)} is running late by #{value(this.train.onSchedule)} minutes")
+          }       
+        } else-if ((this.train.onScheule == 0) {
+          paragraph {
+            value ("#{value(this.train.scheduleNumber)} is running on time")
+          }
+        } else {
+          paragraph {
+            value ("#{value(this.train.scheduleNumber)} is running ahead of time by #{value(this.train.onSchedule)} minutes!")
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+structure (LateMessage) {
+  
+  property (isTrainLate) {
+    type (IsTrainLate)
+    min (Required) max (One)
+  }
+  
+  property (train) {
+    type (Vehicle)
+    min (Required) max (One)
+  }
+}

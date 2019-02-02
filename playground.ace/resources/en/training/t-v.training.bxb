@@ -1,5 +1,5 @@
 train (t-vqq9kf9uo893bmf4nxidrc7z2) {
-  utterance ("[g:IsTrainLate] Is train number (04)[v:ScheduleNumber] running late")
-  plan (Y2BmkCrISaxML8ovzUvRS0xO1fMsDilKzMzzSSxJZZDBkPOtRMjKoskGJ2ekppTmpPqV5ialFjEwMTACMQOQZGQAASYIBgA=)
-  last-modified (1548967310298)
+  utterance ("[g:LateMessage] Is train number (06)[v:ScheduleNumber] running late")
+  plan (Y2BlkCrISaxML8ovzUvRS0xO1fNJLEn1TS0uTkxPZZBBk/Ms9q0MKUrMzAMpYhBDkw1LzchMzkllkEQTd08tgUnJokkFJ2ekppTmpPqV5ialFjGwMDAyMDEwA2kGKIsRzAIBJiAGigMA)
+  last-modified (1549046279257)
 }

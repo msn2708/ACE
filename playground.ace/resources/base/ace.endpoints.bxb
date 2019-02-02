@@ -2,12 +2,13 @@ endpoints {
   action-endpoints {
     action-endpoint (GetVehicle) {
       accepted-inputs (trainNumber)
-      local-endpoint ("getVehicles.js")
+      local-endpoint ("getVehicle.js")
     }
 
     action-endpoint (IsMyTrainLate) {
-      accepted-inputs (trainNumber)
+      accepted-inputs (myTrain)
       local-endpoint ("isMyTrainLate.js")
     }
+    
   }
 }
