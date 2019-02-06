@@ -5,17 +5,20 @@ result-view {
     if (size(train) > 1) {
       list-of (train) {
         where-each (train) {
-          layout-macro (train-summary) {
-            param (train) {
-              expression (train)
-            }
+          paragraph {
+            value("#{value(train.scheduleNumber)}")
           }
+          // layout-macro (train-summary) {
+          //   param (train) {
+          //     expression (train)
+          //   }
+          // }
         }
       }
     } else-if (size(train) == 1) {
       layout-macro (train-details) {
         param (train) {
-          expression (this)
+          expression (train)
         }
       }
     }

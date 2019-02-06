@@ -7,15 +7,13 @@ result-view {
     if ("size(this) > 1") {
       list-of (this) {
         where-each (stop) {
-          layout-macro (stop-summary) {
-            param (stop) {
-              expression (stop)
-            }
+          paragraph {
+            value("#{value(stop.name)}")
           }
         }
       }
     } else-if ("size(this) == 1") {
-      layout-macro (stop-summary) {
+      layout-macro (stop-details) {
         param (stop) {
           expression (this)
         }

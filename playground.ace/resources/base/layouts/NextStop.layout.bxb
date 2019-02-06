@@ -1,0 +1,25 @@
+layout-macro-def (next-stop-summary) {
+  params {
+    param (nextStop) {
+      type(NextStop)
+      min (Required) max (One)
+    }
+  }
+
+  content {
+    section {
+      content {
+        title-area {
+          slot1 {
+            text {
+              value("#{value(nextStop.scheduleNumber)}")
+            }
+          }
+        }
+        paragraph {
+          value("#{value(nextStop.scheduleNumber)}")
+        }
+      }
+    }
+  }
+}

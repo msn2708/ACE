@@ -1,5 +1,0 @@
-dialog (Result) {
-  match: LateMessage(this)
-  template("Train #{value(this.train.scheduleNumber)} is running late by #{value(this.train.onSchedule)} minutes")
-}
-  

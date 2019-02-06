@@ -1,0 +1,11 @@
+dialog (Result) {
+  match: LateMessage(message)
+  
+  if (message.train.onSchedule < 0) {
+    template ("ACE train #{value(message.train.scheduleNumber)} is running late by #{value(message.train.onSchedule)} minutes")
+  } else-if (message.train.onSchedule == 0) {
+    template ("ACE train #{value(message.train.scheduleNumber)} is running on time")
+  } else {
+    template ("ACE train #{value(message.train.scheduleNumber)} is running ahead of time by #{value(message.train.onSchedule)} minutes!")
+  }
+}

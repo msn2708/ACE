@@ -1,0 +1,11 @@
+action (GetAllStops) {
+  type(Search)
+  description (__DESCRIPTION__)
+  collect {
+    input (id) {
+      type (Id)
+      min (Optional) max (One)
+    }
+  }
+  output (Stop)
+}

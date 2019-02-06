@@ -1,6 +1,10 @@
 layout-macro-def (stop-summary) {
-  match: Stop (this)
-  mode (Summary)
+  params {
+    param (stop) {
+      type (Stop)
+      min (Required) max (One)
+    }
+  }
 
   content {
     section {

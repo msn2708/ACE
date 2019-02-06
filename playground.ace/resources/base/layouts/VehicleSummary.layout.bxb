@@ -1,14 +1,15 @@
 layout-macro-def (train-summary) {
-  match: Vehicle (train)
-  mode (Summary)
-
+  params {
+    param (train) {
+      type (Vehicle)
+      min (Required) max (One)
+    }
+  }
   content {
     section {
       content {
         paragraph {
           value("#{value(train.scheduleNumber)}")
-          value("#{value(train.onSchedule)}")
-          style(Detail_M)
         }
       }
     }

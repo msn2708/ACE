@@ -1,0 +1,47 @@
+layout-macro-def (late-message-details) {
+  params {
+    param (message) {
+      type (LateMessage)
+      min (Required) max (One)
+    }
+  }
+
+  content {
+    section {
+      content {
+        title-area {
+          halign (Center)
+          slot1 {
+            text {
+              value("ACE Train #{value(message.train.scheduleNumber)}")
+              style(Title_L)
+            }
+          }
+        }
+        
+        partitioned {
+          content {
+            for-each (message.train.minutesToNextStops) {
+              as (nextStop) {
+                
+                single-line {
+                  text  {
+                    value("#{value(nextStop.stopID)}")
+                    style(Detail_L)
+                  }
+                }
+
+                single-line {
+                  text {
+                    value("#{value(nextStop.time)}")
+                    style (Detail_L)
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

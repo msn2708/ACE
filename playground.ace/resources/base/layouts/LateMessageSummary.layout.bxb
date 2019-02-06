@@ -1,0 +1,25 @@
+layout-macro-def (late-message-summary) {
+  params {
+    param (message) {
+      type (LateMessage)
+      min (Required)
+      max (One)
+    }
+  }
+
+  content {
+    section {
+      content {
+        if (message.isTrainLate) {
+          paragraph {
+            value ("Train #{value(message.train.scheduleNumber)} is running late by #{value(message.isTrainLate)} minutes")
+          }
+        } else {
+          paragraph {
+            value ("Train #{value(message.train.scheduleNumber)} is running on time")
+          }
+        }
+      }
+    }
+  }
+}

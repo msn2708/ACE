@@ -3,11 +3,11 @@ module.exports.function = function getVehicle (trainNumber) {
   var response = http.getUrl (url, {format:'json'})
 
   var trains = response.get_vehicles
-  
+
   if(!trainNumber) {
     return trains
   }
-  
+
   if(trains) {
     for (var i=0; i<trains.length; i++) {
       var train = getObject (trains[i],'scheduleNumber',trainNumber)
@@ -27,6 +27,7 @@ module.exports.function = function getVehicle (trainNumber) {
 
 function getObject(obj, key, val) {
 
+  //console.log (printObject(obj)+ '::' + key + '::' + val)
   var objects = [];
   for (var i in obj) {
     if (!obj.hasOwnProperty(i)) continue;
@@ -34,8 +35,7 @@ function getObject(obj, key, val) {
     //if key matches and value matches or if key matches and value is not passed (eliminating the case where key matches but passed value does not)
     if (i == key && obj[i] == val) { //
       objects.push(obj);
-      console.log ('getObject::printObject')
-      printObject(obj)
+      return objects
     } else if (obj[i] == val && key == ''){
       //only add if the object is not already in the array
       if (objects.lastIndexOf(obj) == -1){
@@ -43,7 +43,7 @@ function getObject(obj, key, val) {
       }
     }
   }
-  return objects;
+  return null;
 }
 
 //return an array of objects according to key, value, or key and value matching

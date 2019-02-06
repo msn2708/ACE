@@ -1,0 +1,18 @@
+layout-macro-def (stop-details) {
+  params {
+    param (stop) {
+      type (Stop)
+      min (Required) max (One)
+    }
+  }
+
+  content {
+    section {
+      content {
+        paragraph {
+          value("#{value(stop.shortName)}")
+        }
+      }
+    }
+  }
+}

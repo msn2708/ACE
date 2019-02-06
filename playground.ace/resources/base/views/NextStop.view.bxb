@@ -1,0 +1,30 @@
+result-view {
+  match {
+    NextStop (nextStop)
+  }
+
+  render {
+    if (size(nextStop) > 1) {
+      list-of (nextStop) {
+        where-each (stop) {
+            title-area {
+              slot1 {
+                text {
+                  value("#{value(stop.scheduleNumber)}")
+                }
+              }
+            }
+            paragraph {
+              value("#{value(stop.scheduleNumber)}")
+            }
+        }
+      }
+    } else-if (size(nextStop) == 1) {
+      layout-macro (next-stop-details) {
+        param (nextStop) {
+          expression (nextStop)
+        }
+      }
+    }
+  }
+}
