@@ -1,0 +1,18 @@
+structure (NextAceStop) {
+  description (__DESCRIPTION__)
+  
+  property (timeToNextStop) {
+    type (TimeToNextStop)
+    min (Required) max (One)
+  }
+  
+  property (scheduledTime) {
+    type (ScheduledTime)
+    min (Required) max(One)
+  }
+  
+  property (actualTime) {
+    type (EtaTime)
+    min (Required) max (One)
+  }
+}

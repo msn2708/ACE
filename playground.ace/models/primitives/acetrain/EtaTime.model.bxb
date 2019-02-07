@@ -1,0 +1,4 @@
+structure (EtaTime) {
+  description (__DESCRIPTION__)
+  role-of (viv.time.Time)
+}

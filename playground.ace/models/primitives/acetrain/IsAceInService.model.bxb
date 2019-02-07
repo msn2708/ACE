@@ -1,0 +1,3 @@
+boolean (IsAceInService) {
+  description (__DESCRIPTION__)
+}

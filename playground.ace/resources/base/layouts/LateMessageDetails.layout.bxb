@@ -18,29 +18,30 @@ layout-macro-def (late-message-details) {
             }
           }
         }
-        
+
         partitioned {
           content {
             for-each (message.train.minutesToNextStops) {
               as (nextStop) {
-                
-                single-line {
-                  text  {
-                    value("#{value(nextStop.stopID)}")
-                    style(Detail_L)
-                  }
-                }
+                cell-area {
+                  slot2 {
+                    content {
+                      order (PrimarySecondary)
+                      primary {
+                        template ("#{value(nextStop.stopID)}")
+                      }
 
-                single-line {
-                  text {
-                    value("#{value(nextStop.time)}")
-                    style (Detail_L)
+                      secondary {
+                        template("#{value(nextStop.time)}")
+                      }
+                    }
                   }
                 }
               }
             }
           }
         }
+        
       }
     }
   }

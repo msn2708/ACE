@@ -1,0 +1,3 @@
+integer (TimeToNextStop) {
+  description (__DESCRIPTION__)
+}
