@@ -59,6 +59,7 @@ layout {
                   geo (this.location)
                 }
               }
+              zoom ("15")
             }
           }
         }

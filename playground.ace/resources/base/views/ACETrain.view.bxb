@@ -4,6 +4,7 @@ result-view {
   }
 
   render {
+
     if (size(this) > 1) {
       list-of (this) {
         where-each (aceTrain) {
@@ -26,8 +27,21 @@ result-view {
       //     expression (this)
       //   }
       // }
+    } else-if (size(this) == 0) {
+      layout {
+        section {
+          content {
+            single-line {
+              text {
+                value ("No trains found")
+                style(Detail_L)
+              }
+            }
+          }
+        }
+      }
     }
-  }
+  } 
   conversation-drivers {
     conversation-driver {
       template ("Check on another train?")
