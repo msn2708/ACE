@@ -1,0 +1,36 @@
+result-view {
+  match {
+    ACETrain(this)
+  }
+
+  render {
+    if (size(this) > 1) {
+      list-of (this) {
+        where-each (aceTrain) {
+          layout-match (aceTrain) {
+            mode (Summary)
+          }
+          // layout-macro (ace-train-summary) {
+          //   param (aceTrain) {
+          //     expression (this)
+          //   }
+          // }
+        }
+      }
+    } else-if (size(this) == 1) {
+      layout-match (this) {
+        mode (Details)
+      }
+      // layout-macro (ace-train-details) {
+      //   param (aceTrain) {
+      //     expression (this)
+      //   }
+      // }
+    }
+  }
+  conversation-drivers {
+    conversation-driver {
+      template ("Check on another train?")
+    }
+  }
+}

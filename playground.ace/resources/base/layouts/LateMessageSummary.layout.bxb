@@ -10,13 +10,41 @@ layout-macro-def (late-message-summary) {
   content {
     section {
       content {
-        if (message.isTrainLate) {
-          paragraph {
-            value ("Train #{value(message.train.scheduleNumber)} is running late by #{value(message.isTrainLate)} minutes")
+        title-card {
+          title-area {
+            halign (Start)
+            slot2 {
+              single-line {
+                text {
+                  value ("ACE #{value(message.train.scheduleNumber)}")
+                }
+              }
+            }
           }
-        } else {
-          paragraph {
-            value ("Train #{value(message.train.scheduleNumber)} is running on time")
+        }
+        cell-card {
+          slot1 {
+            image {
+              shape (Circle)
+              url {
+                template ("")
+              }
+            }
+          }
+          slot2 {
+            content {
+              order (PrimarySecondary)
+              primary {
+                if (message.isTrainLate) {
+                  template ("Late")
+                } else {
+                  template ("On time")
+                }
+              }
+              secondary {
+                template ("")
+              }
+            }
           }
         }
       }

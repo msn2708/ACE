@@ -1,0 +1,49 @@
+layout {
+  match: ACETrain (this)
+  mode (Summary)
+
+  content {
+    section {
+      content {
+        compound-card {
+          content {
+            title-card {
+              title-area {
+                halign (Start)
+                slot1 {
+                  text {
+                    value("ACE #{value(this.trainNumber)}")
+                  }
+                }
+              }
+            }
+
+            cell-area {
+              slot2 {
+                content {
+                  order (PrimarySecondary)
+                  primary {
+                    if (this.onTime) {
+                      template ("On Time")
+                    } else {
+                      template ("Late")
+                    }
+                  }
+                  secondary {
+                    if(this.onTime) {
+                      template ("")
+                    } else {
+                      template ("#{value(this.lateBy)} minutes")
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+
+      }
+    }
+  }
+}

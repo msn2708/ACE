@@ -4,25 +4,115 @@ module.exports.function = function getVehicle (trainNumber) {
 
   var trains = response.get_vehicles
 
+  var aceTrains = new Array ()
+  var k = 0
+
   if(!trainNumber) {
-    return trains
+    for(var j=0; j<trains.length; j++) {
+      var aceTrain = getAceTrain (trains[j])
+
+      if(aceTrain != null)
+        aceTrains[k++] = aceTrain
+    }
+    return aceTrains
   }
 
   if(trains) {
-    for (var i=0; i<trains.length; i++) {
-      var train = getObject (trains[i],'scheduleNumber',trainNumber)
+    for (var z=0; z<trains.length; z++) {
+      var train = getObject (trains[z],'scheduleNumber',trainNumber)
       if(train) {
         if(train.length > 1) {
           //we have a problem
           console.log ('More than 1 train returned: ' + train)
-          return null
         } else {
-          return train
+          var aceTrain = getAceTrain (train)
+
+          if(aceTrain != null)
+            aceTrains[k++] = aceTrain
+          
+          console.log (aceTrains)
+          return aceTrains
         }
       }
-    }  
+    }
+  }  
+  return null
+
+}
+
+function getAceTrain (train) {
+  if(train.scheduleNumber == "NIS")
     return null
+
+  var aceTrain = {}
+
+  aceTrain["trainNumber"] = train.scheduleNumber
+
+  switch(train.inService) {
+    case '1': aceTrain["inService"] = true
+    default: aceTrain["inService"] = false
   }
+
+  aceTrain["location"] = {latitude:train.lat, longitude:train.lng}
+
+  if (train.onSchedule < 0) {
+    aceTrain["onTime"] = false
+    aceTrain["lateBy"] = abs(train.onSchedule)
+  } else {
+    aceTrain["onTime"] = true
+    aceTrain["lateBy"] = 0
+  }
+
+  aceTrain["inService"] = false 
+
+  var nextStops = new Array ()
+  var i = 0
+  for (var nextStop in train.minutesToNextStops) {
+    nextStops[i++] = getAceStop(nextStop)
+  }
+
+  aceTrain["nextStops"] = nextStops
+
+  return aceTrain
+}
+
+function getAceStop (stop) {
+//   var aceStop = {}
+// 
+//   aceStop["timeToNextStop"] = stop.minutes
+//   aceStop["aceStopName"] = getStopName(stop.id)
+//   aceStop["scheduledTime"] = parseAceTime(stop.schedule)
+//   aceStop["actualTime"] = parceAceTime(stop.time)
+// 
+//   return aceStop
+  
+  return { timeToNextStop:stop.minutes, 
+           aceStopName:getStopName(stop.id),
+           scheduledTime:parseAceTime(stop.schedule),
+           actualTime:parseAceTime(stop.time) 
+         }
+}
+
+function getStopName (id) {
+  switch(id) {
+    case '150': return 'Stockton'
+    case '151': return 'Lathrop'
+    case '152': return 'Tracy'
+    case '153': return 'Vasco'
+    case '154': return 'Livermore'
+    case '155': return 'Pleasanton'
+    case '156': return 'Fremont'
+    case '157': return 'Great America'
+    case '158': return 'Santa Clara'
+    case '159': return 'San Jose'
+    default: return ''
+  }
+}
+
+function parseAceTime (aceTime) {
+  var zonedDateTime = dates.ZonedDateTime.parseTime (aceTime, "hh:mma", "America/Los_Angeles" )
+  console.log('zoneddatetime: ' + zonedDateTime)
+  return {hour:zonedDateTime.getHour(), minute:zonedDateTime.getMinute(), second:0 ,timezone:timezone}
 }
 
 function getObject(obj, key, val) {

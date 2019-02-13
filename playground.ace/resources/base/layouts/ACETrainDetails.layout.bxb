@@ -1,0 +1,198 @@
+layout {
+  match: ACETrain (this)
+  mode (Details)
+
+  content {
+    section {
+
+      content {
+
+        compound-card {
+          content {
+            title-card {
+              title-area {
+                halign (Start)
+                slot1 {
+                  text {
+                    value("ACE #{value(this.trainNumber)}")
+                    style (Title_L)
+                  }
+                }
+              }
+            }
+
+            cell-area {
+
+              slot2 {
+                content {
+                  order (PrimarySecondary)
+                  primary {
+                    if (this.onTime) {
+                      template ("On Time")                     
+                    } else {
+                      template ("Late")
+                    }
+                  }
+                  secondary {
+                    if(this.onTime) {
+                      template ("")
+                    } else {
+                      template ("#{value(this.lateBy)} minutes")
+                    }
+                  }
+                }
+              }
+            }
+
+            map-card {          
+              size (M)
+              title-area{
+                halign (Start)
+                slot1 {
+                  text {
+                    value ("")
+                  }
+                }
+              }
+              markers{
+                marker {
+                  geo (this.location)
+                }
+              }
+            }
+          }
+        }
+
+        for-each (this.nextStops) {
+          as (nextStop) {
+
+            title-area {
+              halign (Start)
+              slot1 {
+                text {
+                  value ("#{value(nextStop.aceStopName)}")
+                  style(Title_L)
+                }
+              }
+            }
+
+            hbox {
+              content {
+                vbox {
+                  content {
+                    text {
+                      value ("Arriving in")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                  halign (Start)
+                }
+                vbox {
+                  halign (End)
+                  content {
+                    text {
+                      value("#{value(nextStop.timeToNextStop)} minutes")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+
+            hbox {
+              content {
+                vbox {
+                  content {
+                    text {
+                      value ("Scheduled Time")
+                      style(Detail_L_Soft)
+                    }
+                  }
+                  halign (Start)
+                }
+                vbox {
+                  halign (End)
+                  content {
+                    text {
+                      value("#{value(nextStop.scheduledTime)}")
+                      style(Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+
+
+            hbox {
+              content {
+                vbox {
+                  content {
+                    text {
+                      value ("ETA")
+                      style(Detail_L_Soft)
+                    }
+                  }
+                  halign (Start)
+                }
+                vbox {
+                  halign (End)
+                  content {
+                    text {
+                      value("#{value(nextStop.actualTime)}")
+                      style(Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+            //             cell-area {
+            //               slot2 {
+            //                 content {
+            //                   order (PrimarySecondary)
+            //                   primary {
+            //                     template ("Arriving in")
+            //                   }
+            //                   secondary {
+            //                     template ("#{value(nextStop.timeToNextStop)} minutes")
+            //                   }
+            //                 }
+            //               }
+            //             }
+            // 
+            //             cell-area {
+            //               slot2 {
+            //                 content {
+            //                   order (PrimarySecondary)
+            //                   primary {
+            //                     template ("Scheduled Time")
+            //                   }
+            //                   secondary {
+            //                     template ("#{value(nextStop.scheduledTime)}")
+            //                   }
+            //                 }
+            //               }
+            //             }
+            // 
+            //             cell-area {
+            //               slot2 {
+            //                 content {
+            //                   order (PrimarySecondary)
+            //                   primary {
+            //                     template ("ETA")
+            //                   }
+            //                   secondary {
+            //                     template ("#{value(nextStop.actualTime)}")
+            //                   }
+            //                 }
+            //               }
+            //             }
+
+            divider {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

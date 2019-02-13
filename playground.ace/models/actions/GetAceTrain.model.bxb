@@ -1,0 +1,12 @@
+action (GetAceTrain) {
+  type(Search)
+  description (__DESCRIPTION__)
+
+  collect {
+    input (trainNumber) {
+      type (ScheduleNumber)
+      min (Optional) max (One)
+    }
+  }
+  output (ACETrain)
+}

@@ -1,0 +1,11 @@
+dialog (Result) {
+  match: ACETrain(this)
+  
+  if (this.lateBy < 0) {
+    template ("ACE train #{value(this.trainNumber)} is running late by #{value(this.lateBy)} minutes")
+  } else-if (this.lateBy == 0) {
+    template ("ACE train #{value(this.trainNumber)} is running on time")
+  } else {
+    template ("ACE train #{value(this.trainNumber)} is running ahead of time by #{value(this.lateBy)} minutes!")
+  }
+}
