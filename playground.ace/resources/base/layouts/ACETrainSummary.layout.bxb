@@ -39,10 +39,9 @@ layout {
                 }
               }
             }
+            divider {}
           }
         }
-
-
       }
     }
   }
