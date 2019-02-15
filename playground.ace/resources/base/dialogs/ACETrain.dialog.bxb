@@ -6,4 +6,10 @@ dialog (Result) {
   } else {
     template ("ACE #{value(this.trainNumber)} is running late by #{value(this.lateBy)} minutes")
   }
+  
+  if(this != null) {
+    
+  } else {
+    template ("No ACE trains are running at this time")
+  }
 }
