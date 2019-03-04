@@ -1,48 +1,95 @@
-layout {
-  match: ACETrain (this)
-  mode (Summary)
-
+layout-macro-def (acetrain-summary) {
+  params {
+    param (aceTrain) {
+      type (ACETrain)
+      max (One) min (Required)
+    }
+  }
   content {
-    section {
+    compound-card {
       content {
-        compound-card {
-          content {
-            title-card {
-              title-area {
-                halign (Start)
-                slot1 {
-                  text {
-                    value("ACE #{value(this.trainNumber)}")
-                  }
-                }
+        title-card {
+          title-area {
+            halign (Start)
+            slot1 {
+              text {
+                value("ACE #{value(aceTrain.trainNumber)}")
               }
             }
-
-            cell-area {
-              slot2 {
-                content {
-                  order (PrimarySecondary)
-                  primary {
-                    if (this.onTime) {
-                      template ("On Time")
-                    } else {
-                      template ("Late")
-                    }
-                  }
-                  secondary {
-                    if(this.onTime) {
-                      template ("")
-                    } else {
-                      template ("#{value(this.lateBy)} minutes")
-                    }
-                  }
-                }
-              }
-            }
-            divider {}
           }
         }
+
+        cell-area {
+          slot2 {
+            content {
+              order (PrimarySecondary)
+              primary {
+                if (aceTrain.onTime) {
+                  template ("On Time")
+                } else {
+                  template ("Late")
+                }
+              }
+              secondary {
+                if(aceTrain.onTime) {
+                  template ("")
+                } else {
+                  template ("#{value(aceTrain.lateBy)} minutes")
+                }
+              }
+            }
+          }
+        }
+        divider {}
       }
     }
   }
 }
+// layout {
+//   match: ACETrain (this)
+//   mode (Summary)
+// 
+//   content {
+//     section {
+//       content {
+//         compound-card {
+//           content {
+//             title-card {
+//               title-area {
+//                 halign (Start)
+//                 slot1 {
+//                   text {
+//                     value("ACE #{value(this.trainNumber)}")
+//                   }
+//                 }
+//               }
+//             }
+// 
+//             cell-area {
+//               slot2 {
+//                 content {
+//                   order (PrimarySecondary)
+//                   primary {
+//                     if (this.onTime) {
+//                       template ("On Time")
+//                     } else {
+//                       template ("Late")
+//                     }
+//                   }
+//                   secondary {
+//                     if(this.onTime) {
+//                       template ("")
+//                     } else {
+//                       template ("#{value(this.lateBy)} minutes")
+//                     }
+//                   }
+//                 }
+//               }
+//             }
+//             divider {}
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

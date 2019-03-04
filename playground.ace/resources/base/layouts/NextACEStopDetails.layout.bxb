@@ -1,0 +1,102 @@
+layout-macro-def (next-acestop-details) {
+  params {
+    param (nextStops) {
+      type (NextAceStop)
+      min (Required) max (Many)
+    }
+  }
+
+  content {
+    section {
+      content {
+        for-each (nextStops) {
+          as(nextStop) {
+            title-area {
+              halign (Start)
+              slot1 {
+                text {
+                  value ("#{value(nextStop.aceStopName)}")
+                  style(Title_L)
+                }
+              }
+            }
+
+            hbox {
+              content {
+                vbox {
+                  content {
+                    text {
+                      value ("Arriving in")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                  halign (Start)
+                }
+                vbox {
+                  halign (End)
+                  content {
+                    text {
+                      value("#{value(nextStop.timeToNextStop)} minutes")
+                      style (Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+
+            hbox {
+              content {
+                vbox {
+                  content {
+                    text {
+                      value ("Scheduled Time")
+                      style(Detail_L_Soft)
+                    }
+                  }
+                  halign (Start)
+                }
+                vbox {
+                  halign (End)
+                  content {
+                    text {
+                      value("#{value(nextStop.scheduledTime)}")
+                      style(Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+
+
+            hbox {
+              content {
+                vbox {
+                  content {
+                    text {
+                      value ("ETA")
+                      style(Detail_L_Soft)
+                    }
+                  }
+                  halign (Start)
+                }
+                vbox {
+                  halign (End)
+                  content {
+                    text {
+                      value("#{value(nextStop.actualTime)}")
+                      style(Detail_L_Soft)
+                    }
+                  }
+                }
+              }
+            }
+
+            divider {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

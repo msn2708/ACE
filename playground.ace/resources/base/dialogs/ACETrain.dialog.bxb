@@ -1,14 +1,15 @@
 dialog (Result) {
-  match: ACETrain(this)
-
-  if (this.onTime) {
-    template ("ACE #{value(this.trainNumber)} is running on time")
-  } else {
-    template ("ACE #{value(this.trainNumber)} is running late by #{value(this.lateBy)} minutes")
+  match: ACETrain(this) {
   }
-  
+
   if(this != null) {
-    
+    if(size(this) == 1) {
+      if (this.onTime) {
+        template ("ACE #{value(this.trainNumber)} is running on time")
+      } else {
+        template ("ACE #{value(this.trainNumber)} is running late by #{value(this.lateBy)} minutes")
+      } 
+    }
   } else {
     template ("No ACE trains are running at this time")
   }

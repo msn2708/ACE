@@ -8,25 +8,27 @@ result-view {
     if (size(this) > 1) {
       list-of (this) {
         where-each (aceTrain) {
-          layout-match (aceTrain) {
-            mode (Summary)
+          layout-macro (acetrain-summary) {
+            param (aceTrain) {
+              expression (this)
+            }
           }
-          // layout-macro (ace-train-summary) {
-          //   param (aceTrain) {
-          //     expression (this)
-          //   }
-          // }
         }
       }
     } else-if (size(this) == 1) {
-      layout-match (this) {
-        mode (Details)
+      layout {
+        layout-macro (acetrain-details) {
+          param (aceTrain) {
+            expression (this)
+          }
+        }
+        layout-macro (next-acestop-details) {
+          param (nextStops) {
+            expression (this.nextStops)
+          }
+        }
       }
-      // layout-macro (ace-train-details) {
-      //   param (aceTrain) {
-      //     expression (this)
-      //   }
-      // }
+
     } else-if (size(this) == 0) {
       layout {
         section {
