@@ -1,4 +1,5 @@
 //return an array of objects according to key, value, or key and value matching
+var console = require('console')
 function getObjects(obj, key, val) {
   console.log ('Came here inside getObjects')
     var objects = [];

@@ -1,3 +1,6 @@
 text (ScheduleNumber) {
   description (__DESCRIPTION__)
+  features {
+    transient
+  }
 }

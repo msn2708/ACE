@@ -1,0 +1,4 @@
+dialog (Elicitation) {
+  match: ScheduleNumber
+  template("Please say or enter the train number, for example 07")
+}

@@ -4,16 +4,16 @@ layout-macro-def (acetrain-details) {
       type (ACETrain)
       min (Required) max (One)
     }
-  }
+  }  
   content {
     section {
-      content {
+      content {        
         compound-card {
-          content {
+          content {            
             title-card {
               title-area {
                 halign (Start)
-                slot1 {
+                slot1 {                 
                   text {
                     value("ACE #{value(aceTrain.trainNumber)}")
                     style (Title_L)
@@ -23,7 +23,17 @@ layout-macro-def (acetrain-details) {
             }
 
             cell-area {
+              slot3 {
+                if (!aceTrain.onTime) {
+                  image {
+                    shape (Circle)
+                    url {
+                      template ("/images/circle-512.jpg")                    
+                    }
+                  }
+                } 
 
+              }
               slot2 {
                 content {
                   order (PrimarySecondary)

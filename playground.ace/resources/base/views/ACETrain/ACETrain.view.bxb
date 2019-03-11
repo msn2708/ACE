@@ -1,0 +1,97 @@
+result-view {
+  match {
+    ACETrain(this)
+  }
+
+  render {
+    if (size(this) > 1) {
+      list-of (this) {
+        navigation-mode {
+          read-many-and-next {
+            page-size (4)
+            
+            next-page-question (Would you like to hear information about the next set of trains?)
+            // page-selection-question (Would you like more information about one of these trains?)            
+            // item-selection-question (Would you like to get more information about this train?)
+            underflow-statement (This is the first train.)
+            // list-summary ("There are #{size(this)} trains running at the moment")
+            // next-item-question (Would you like to review the next train?)
+            overflow-statement (That's all I have.)
+            overflow-question (Which train would you like to choose?)
+
+          }          
+        }
+        where-each-page (page) {
+          where-each-item (aceTrain) {            
+            layout-macro (acetrain-summary) {            
+              param (aceTrain) {
+                expression (aceTrain)
+              }            
+            }
+          }
+          summary {            
+            if (isFirstPage()) {
+              if (size(page) == 0) {
+                template ("There are no trains running at the moment ...")                
+              } else-if (size(page) == 1) { //Dive, shows a details page
+                template ("I found one ACE train. ACE #{value(page[0].trainNumber)}")
+              } else-if (isLastPage()) { //Summary Page
+                template ("I found #{spell(size(page))} ACE trains.")
+              } else {
+                template ("Here are the first #{spell(size(page))}...and the first one is ACE #{value(page[0].trainNumber)}")
+              }
+            } else-if (!isLastPage()) {
+              if (isForwardNavigation()) {                
+                template ("Here are the next #{spell(size(page))} #{concept(page)}...")
+              } else-if (isBackwardNavigation()) {
+                template ("Here are the previous #{spell(size(page))} #{concept(page)}...")
+              } else {
+                template ("Here are the current #{spell(size(page))} #{concept(page)}...")
+              }
+            } else {
+              if (size(page) == 0) {
+                template ("Thats all the trains I have...")
+              } else-if (size(page) == 1) {
+                template ("Here's the last #{concept(page.plural('One'))}...ACE #{value(page[0].trainNumber)}")
+              } else {
+                template ("Here are the last #{spell(size(page))} #{concept(page)}...")
+              }
+            }
+          }
+        }
+      }
+    } else-if (size(this) == 1) {      
+      layout {
+        layout-macro (acetrain-details) {
+          param (aceTrain) {
+            expression (this)
+          }          
+        }
+        layout-macro (next-acestop-details) {
+          param (nextStops) {
+            expression (this.nextStops)
+          }
+        }
+      }
+
+    } else-if (size(this) == 0) {      
+      layout {
+        section {
+          content {
+            single-line {
+              text {
+                value ("No trains are running at the moment.")
+                style(Detail_L)
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
+  conversation-drivers {
+    conversation-driver {
+      template ("Check on another train?")
+    }
+  }
+}

@@ -1,0 +1,10 @@
+train (t-dq0nv0zdz2x5tixgsbk576xi9) {
+  utterance ("[g:ACETrain:continue:GetAceTrain] (ACE 6)[v:FilterWord]")
+  plan (Y2BhECjLr9BLTE7Vc3R2DSlKzMxjEIeJuGXmlKQWOSangsWLsSgVQlUanl+UwsDMwMjABCQZgDQIQgATEAPFAA==)
+  last-modified (1552180948681)
+}
+train (t-dzcj0tx0ljcur6ejh4c5b5k40) {
+  utterance ([g:ACETrain,r:GetAceTrain] blah blah blah)
+  plan (Y2BiECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgQZgZABjJkgNAA=)
+  last-modified (1552093546552)
+}

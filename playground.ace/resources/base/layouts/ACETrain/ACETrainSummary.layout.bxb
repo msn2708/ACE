@@ -20,6 +20,16 @@ layout-macro-def (acetrain-summary) {
         }
 
         cell-area {
+          slot3 {
+            if(!aceTrain.onTime) {
+              image {
+                shape (Circle)
+                url {
+                  template ("/images/circle-512.jpg")                    
+                }
+              }
+            }
+          }
           slot2 {
             content {
               order (PrimarySecondary)

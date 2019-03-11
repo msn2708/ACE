@@ -8,7 +8,7 @@ structure (ACETrain) {
   
   property (trainNumber) {
     type(ScheduleNumber)
-    min (Required) max (One)
+    min (Required) max (One)    
   }
   
   property (inService) {
@@ -29,5 +29,9 @@ structure (ACETrain) {
   property(nextStops) {
     type (NextAceStop) 
     min (Required) max (Many)
+  }
+  
+  features {
+    transient
   }
 }

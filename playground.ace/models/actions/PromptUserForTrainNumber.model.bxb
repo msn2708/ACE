@@ -1,0 +1,11 @@
+action (PromptUserForTrainNumber) {
+  type(Constructor)
+  description (__DESCRIPTION__)
+  collect {
+    input (trainNumber) {
+      type (ScheduleNumber)
+      min (Required) max (One)
+    }
+  }
+  output (ScheduleNumber)
+}

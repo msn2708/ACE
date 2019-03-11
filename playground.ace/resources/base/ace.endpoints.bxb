@@ -20,5 +20,13 @@ endpoints {
       accepted-inputs (id)
       local-endpoint ("getAllStops.js")
     }
+    action-endpoint (PromptUserForTrainNumber) {
+      accepted-inputs (trainNumber)
+      local-endpoint ("getTrainNumber.js")
+    }
+    action-endpoint (FilterAceTrains) {
+      accepted-inputs (aceTrains, filterWord)
+      local-endpoint ("filterAceTrain.js")
+    }
   }
 }

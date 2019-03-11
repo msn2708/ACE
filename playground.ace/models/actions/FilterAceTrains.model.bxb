@@ -1,0 +1,15 @@
+action (FilterAceTrains) {
+  type(Search)
+  description (__DESCRIPTION__)
+  collect {
+    input (aceTrains) {
+      type (ACETrain)
+      min (Required) max (Many)
+    }
+    input (filterWord) {
+      type (FilterWord)
+      min (Required) max (One)
+    }
+  }
+  output (ACETrain)
+}

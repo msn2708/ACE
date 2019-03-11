@@ -1,10 +1,10 @@
 train (t-bv36imwe6z0asham8knvpl247) {
   utterance ("[g:ACETrain] what is the status of train number (05)[v:ScheduleNumber]")
-  plan (Y2BmEC/ISaxML8ovzUvRS0xO1XN0dg0pSszMY5BCk3BPLXFMToXIyaLJBSdnpKaU5qT6leYmpRYxMDEwAjEDkGRkAAEmCAYA)
-  last-modified (1549921443401)
+  plan (Y2BmECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQxMDIxAzAAkGRlAgAmCAQ==)
+  last-modified (1551805496088)
 }
 train (t-bzuwsptyajkpkptf4jkhng2pj) {
   utterance ("[g:ACETrain] is train number (08)[v:ScheduleNumber] on time?")
-  plan (Y2BmEC/ISaxML8ovzUvRS0xO1XN0dg0pSszMY5BCk3BPLXFMToXIyaLJBSdnpKaU5qT6leYmpRYxMDEwAjEDkGRkAAEmCAYA)
-  last-modified (1549821325134)
+  plan (Y2BmECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQxMDIxAzAAkGRlAgAmCAQ==)
+  last-modified (1551805496209)
 }

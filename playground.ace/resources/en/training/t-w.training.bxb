@@ -1,5 +1,5 @@
 train (t-wcu25k4924pakhkr0wgfclrna) {
-  utterance ([g:ACETrain] show status of all ACE trains)
-  plan (Y2BkEC/ISaxML8ovzUvRS0xO1XN0dg0pSszMYwABRhABAA==)
-  last-modified (1549645650125)
+  utterance ([g:ACETrain,r:GetAceTrain] show status of all ACE trains)
+  plan (Y2BiECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgQZgZABjJkgNAA=)
+  last-modified (1552093242755)
 }

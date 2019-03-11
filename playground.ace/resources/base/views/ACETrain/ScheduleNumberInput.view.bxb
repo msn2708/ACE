@@ -1,0 +1,29 @@
+input-view {
+  match {
+    ScheduleNumber
+  }
+
+  render {
+    form {
+      on-submit {        
+        goal: ACETrain
+        route: GetAceTrain
+        value: core.FormElement(trainNumber)
+      }
+      elements {
+        text-input {
+          // allow-negative (false)
+          //prefix (ACE ) 
+          id(trainNumber)
+          type (ScheduleNumber)
+          label(ACE Train: )
+          required (true)
+          pattern-type (none)
+          value ("07")
+          max-length (2)
+          // placeholder-char(*)
+        }        
+      }
+    }
+  }
+}
