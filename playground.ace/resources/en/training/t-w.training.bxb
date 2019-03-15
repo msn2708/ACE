@@ -1,5 +1,10 @@
 train (t-wcu25k4924pakhkr0wgfclrna) {
-  utterance ([g:ACETrain,r:GetAceTrain] show status of all ACE trains)
-  plan (Y2BiECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgQZgZABjJkgNAA=)
-  last-modified (1552093242755)
+  utterance ([g:ACETrain] show status of all ACE trains)
+  plan (Y2BkECjLr9BLTE7Vc3R2DSlKzMxjAAFGEAEA)
+  last-modified (1552611842550)
+}
+train (t-wni60la82f8wsafsv7qghizjb) {
+  utterance ("[g:ACETrain] what is the status of (ace 06)[v:ScheduleNumber]")
+  plan (Y2BmECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQxMDIxAzAAkGRlAgAmCAQ==)
+  last-modified (1552601052487)
 }

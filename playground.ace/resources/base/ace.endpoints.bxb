@@ -7,7 +7,7 @@ endpoints {
     }
 
     action-endpoint (GetAceTrain) {
-      accepted-inputs (trainNumber)
+      accepted-inputs (scheduleNumber,$vivContext)
       local-endpoint ("getAceTrain.js")
     }
 

@@ -21,8 +21,8 @@ layout-macro-def (acetrain-details) {
                 }
               }
             }
-
-            cell-area {
+            
+            cell-card {
               slot3 {
                 if (!aceTrain.onTime) {
                   image {

@@ -9,17 +9,34 @@ layout-macro-def (next-acestop-details) {
   content {
     section {
       content {
+        divider {}
         for-each (nextStops) {
           as(nextStop) {
-            title-area {
-              halign (Start)
-              slot1 {
-                text {
-                  value ("#{value(nextStop.aceStopName)}")
-                  style(Title_L)
+            image-card {
+              image-object-fit (Cover)
+              aspect-ratio (21:9)
+              image-url("/images/#{value(nextStop.aceStopName)}.jpg")
+              title-area {
+                halign (Start)
+                slot1 {
+                  text {
+                    value ("#{value(nextStop.aceStopName)}")
+                    style(Title_L)
+                  }
                 }
               }
+              text-position (Overlay)            
             }
+
+            // title-area {
+            //   halign (Start)
+            //   slot1 {
+            //     text {
+            //       value ("#{value(nextStop.aceStopName)}")
+            //       style(Title_L)
+            //     }
+            //   }
+            // }
 
             hbox {
               content {

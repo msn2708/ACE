@@ -5,10 +5,12 @@ action (FilterAceTrains) {
     input (aceTrains) {
       type (ACETrain)
       min (Required) max (Many)
+      prompt-behavior (AlwaysSelection)
     }
     input (filterWord) {
       type (FilterWord)
       min (Required) max (One)
+      prompt-behavior (AlwaysElicitation)
     }
   }
   output (ACETrain)

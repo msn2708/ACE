@@ -1,10 +1,25 @@
-train (t-bv36imwe6z0asham8knvpl247) {
-  utterance ("[g:ACETrain] what is the status of train number (05)[v:ScheduleNumber]")
+train (t-b7z3trf29fxqn1tzkk497u0y5) {
+  utterance ("[g:GetAceTrain:continue:ACETrain] (ACE 6)[v:ScheduleNumber]")
+  plan (Y2BmECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQxMDIxAzAAkGRlAAMoHAA==)
+  last-modified (1552588151982)
+}
+train (t-b8aiyd19dukbbi65iozo1lmsu) {
+  utterance ("[g:ACETrain] what is the status of (train number 6)[v:ScheduleNumber]")
   plan (Y2BmECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQxMDIxAzAAkGRlAgAmCAQ==)
-  last-modified (1551805496088)
+  last-modified (1552605194755)
+}
+train (t-boy345so3bwxij2hiy7fgtza5) {
+  utterance ([g:ACETrain,r:PromptUserForTrainNumber] is my train running on time)
+  plan (Y2BlECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQwKMPGAovzcgpLQ4tQit/wisB6oClw6WRgYGZgYmIE0A5TFCGaBABMQMzMwAAA=)
+  last-modified (1552610847179)
+}
+train (t-bv36imwe6z0asham8knvpl247) {
+  utterance ("[g:ACETrain] what is the status of (train number 05)[v:ScheduleNumber]")
+  plan (Y2BmECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQxMDIxAzAAkGRlAgAmCAQ==)
+  last-modified (1552609738038)
 }
 train (t-bzuwsptyajkpkptf4jkhng2pj) {
-  utterance ("[g:ACETrain] is train number (08)[v:ScheduleNumber] on time?")
+  utterance ("[g:ACETrain] is (train number 08)[v:ScheduleNumber] on time?")
   plan (Y2BmECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQxMDIxAzAAkGRlAgAmCAQ==)
-  last-modified (1551805496209)
+  last-modified (1552605128025)
 }

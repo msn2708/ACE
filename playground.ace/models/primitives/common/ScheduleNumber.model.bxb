@@ -1,4 +1,4 @@
-text (ScheduleNumber) {
+name (ScheduleNumber) {
   description (__DESCRIPTION__)
   features {
     transient

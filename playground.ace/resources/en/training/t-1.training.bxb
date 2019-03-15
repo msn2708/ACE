@@ -3,3 +3,8 @@ train (t-1kqxch6r5w4ej0525r831hnxp) {
   plan (Y2BiECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgQZgZABjJkgNAA=)
   last-modified (1552093509728)
 }
+train (t-1m0to99cvo0hmdkz2f5f466qg) {
+  utterance ("[g:ACETrain] show me all running (trains)[v:ScheduleNumber]")
+  plan (Y2BmECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQxMDIxAzAAkGRlAgAmCAQ==)
+  last-modified (1552605007752)
+}

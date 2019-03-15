@@ -1,3 +1,5 @@
 module.exports.function = function filterAceTrain (aceTrains, filterWord) {
-  return aceTrains.filter(function filterTrains(el) {return (textlib.fuzzyMatch(filterWord,el,-1) == 0)})
+  // var filterWord = filterWord.trim().replace(/\s/g,'')
+  var scheduleNumber = filterWord.replace(/^\D+/g, "")
+  return aceTrains.filter(function filterTrains(el) {return (textlib.fuzzyMatch(scheduleNumber,el,-1) == 0)})
 }

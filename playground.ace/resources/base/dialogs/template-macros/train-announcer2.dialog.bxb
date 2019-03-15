@@ -1,0 +1,11 @@
+template-macro-def (train-announcer2) {
+  params {
+    param(aceTrains) {
+      type (ACETrain)
+      max (Many) min (Required)
+    }
+  }
+  content {
+    template ("ACE #{value(aceTrains.trainNumber)}")
+  }
+}

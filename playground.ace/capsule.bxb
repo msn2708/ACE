@@ -4,10 +4,12 @@ capsule {
   format (3)
   targets {
     target (bixby-mobile-en-US)
+    target (bixby-speaker-en-US)
+
   }
 
   capsule-imports {
-    
+
     import (viv.geo) {
       as (geo) version (9.6.3)
     }

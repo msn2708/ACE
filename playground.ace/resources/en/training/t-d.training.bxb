@@ -1,10 +1,10 @@
-train (t-dq0nv0zdz2x5tixgsbk576xi9) {
-  utterance ("[g:ACETrain:continue:GetAceTrain] (ACE 6)[v:FilterWord]")
-  plan (Y2BhECjLr9BLTE7Vc3R2DSlKzMxjEIeJuGXmlKQWOSangsWLsSgVQlUanl+UwsDMwMjABCQZgDQIQgATEAPFAA==)
-  last-modified (1552180948681)
+train (t-ddlfgmcizsjqrf03u5zvp53xx) {
+  utterance ([g:ACETrain] show me the status of all trains)
+  plan (Y2BkECjLr9BLTE7Vc3R2DSlKzMxjAAFGEAEA)
+  last-modified (1552611806436)
 }
-train (t-dzcj0tx0ljcur6ejh4c5b5k40) {
-  utterance ([g:ACETrain,r:GetAceTrain] blah blah blah)
-  plan (Y2BiECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgQZgZABjJkgNAA=)
-  last-modified (1552093546552)
+train (t-dq0nv0zdz2x5tixgsbk576xi9) {
+  utterance ("[g:ACETrain:continue:GetAceTrain] (ACE 6)[v:ScheduleNumber]")
+  plan (Y2BmECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQxMDIxAzAAkGRlAgAmCAQ==)
+  last-modified (1552586741541)
 }

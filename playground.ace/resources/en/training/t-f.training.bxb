@@ -1,0 +1,5 @@
+train (t-ffjmhx9jc3wj967tdn9vlmxey) {
+  utterance ([g:ACETrain] get the status of all running trains)
+  plan (Y2BkECjLr9BLTE7Vc3R2DSlKzMxjAAFGEAEA)
+  last-modified (1552611818587)
+}

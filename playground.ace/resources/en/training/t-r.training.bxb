@@ -1,0 +1,5 @@
+train (t-r40tl3jlnhdrw8krfjboqglfr) {
+  utterance ("[g:ACETrain] what is the status of (ace 6)[v:ScheduleNumber]")
+  plan (Y2BmECjLr9BLTE7Vc3R2DSlKzMxjEIaJuKeWOCanQgTFYILByRmpKaU5qX6luUmpRQxMDIxAzAAkGRlAgAmCAQ==)
+  last-modified (1552605265014)
+}

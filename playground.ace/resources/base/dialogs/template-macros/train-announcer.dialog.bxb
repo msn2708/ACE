@@ -1,0 +1,29 @@
+template-macro-def (train-announcer) {
+  params {
+    param (numTrain) {
+      type (core.Integer)
+      max (One) min (Required)
+    }
+    param(aceTrains) {
+      type (ACETrain)
+      max (Many) min (Required)
+    }
+  }
+  content {
+    if (numTrain > 0) {
+      template-macro (train-announcer) {
+        param (aceTrains) {
+          expression (aceTrains)
+        }
+        param(numTrain) {
+          expression (numTrain-1)
+        }
+      }
+    } else-if (numTrain == 0) {
+      template ("ACE #{value(aceTrains[numTrain].trainNumber)}")
+    } else {
+
+    }
+
+  }
+}

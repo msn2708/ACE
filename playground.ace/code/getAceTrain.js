@@ -1,16 +1,26 @@
 var ACETRAINSLIST = require("./lib/aceTrains");
 var config = require("config");
+var console = require("console");
+
 var http = require ('http');
 
-module.exports.function = function getVehicle (trainNumber) {
+module.exports.function = function getVehicle (scheduleNumber,$vivContext) {
+  
+  if(scheduleNumber) {
+    var trainNumber =   scheduleNumber.replace(/\D+/gi, "")
+    if(trainNumber.indexOf('1') != 0 && trainNumber.indexOf('0') != 0) {
+      trainNumber = '0' + trainNumber
+    }
+  }
+  
   if(config.get("offline") != "true") {
     var url = 'http://acerailpublic.etaspot.net/service.php?service=get_vehicles&includeETAData=1&orderedETAArray=1&token=TESTING'
     var response = http.getUrl (url, {format:'json', cacheTime:0})
     var trains = response.get_vehicles
-  } else {
-    var trains = ACETRAINSLIST
-  }
-  
+    } else {
+      var trains = ACETRAINSLIST
+      }
+
   var aceTrains = new Array ()
   var n = 0
 
@@ -18,9 +28,9 @@ module.exports.function = function getVehicle (trainNumber) {
     for (var z=0; z<trains.length; z++) {
       if(trainNumber) {
         var train = getObject (trains[z],'scheduleNumber',trainNumber)
-      } else {
-        var train = trains[z]
-      }
+        } else {
+          var train = trains[z]
+          }
       if(train != null) {
         if(train.length > 1) {
           //we have a problem
@@ -48,7 +58,7 @@ module.exports.function = function getVehicle (trainNumber) {
           var nextStops = new Array ()
           var i = 0
           for (var k=0; k < trains[z].minutesToNextStops.length; k++) {
-            
+
             var nextStop = {}
             nextStop.timeToNextStop = trains[z].minutesToNextStops[k].minutes
             nextStop.scheduledTime = parseAceTime(trains[z].minutesToNextStops[k].schedule)

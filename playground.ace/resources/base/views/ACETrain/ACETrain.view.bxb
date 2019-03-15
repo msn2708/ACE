@@ -18,14 +18,15 @@ result-view {
             // next-item-question (Would you like to review the next train?)
             overflow-statement (That's all I have.)
             overflow-question (Which train would you like to choose?)
-
+            
           }          
         }
         where-each-page (page) {
-          where-each-item (aceTrain) {            
+          where-each-item (aceTrain) {
+           
             layout-macro (acetrain-summary) {            
               param (aceTrain) {
-                expression (aceTrain)
+                expression (aceTrain) 
               }            
             }
           }
@@ -36,9 +37,18 @@ result-view {
               } else-if (size(page) == 1) { //Dive, shows a details page
                 template ("I found one ACE train. ACE #{value(page[0].trainNumber)}")
               } else-if (isLastPage()) { //Summary Page
-                template ("I found #{spell(size(page))} ACE trains.")
+                // template ("I found #{spell(size(page))} ACE trains.")
+                template-macro (train-announcer2) {
+                  // param (numTrain) {
+                  //   expression(size(page))
+                  // }
+                  param (aceTrains) {
+                    expression (page)
+                  }
+                }
+                
               } else {
-                template ("Here are the first #{spell(size(page))}...and the first one is ACE #{value(page[0].trainNumber)}")
+                template ("Here are the first #{spell(size(page))} ACE trains. The first one is ACE #{value(page[0].trainNumber)}. The second one is ACE #{value(page[1].trainNumber)}. The third one is ACE #{value(page[2].trainNumber)}")
               }
             } else-if (!isLastPage()) {
               if (isForwardNavigation()) {                
@@ -88,7 +98,17 @@ result-view {
         }
       }
     }
-  } 
+  }
+  
+  followup {
+    prompt {
+      dialog ("")
+      on-confirm {
+        message ("Please choose a train or say repeat to hear the listings again")
+      }
+    }
+  }
+  
   conversation-drivers {
     conversation-driver {
       template ("Check on another train?")

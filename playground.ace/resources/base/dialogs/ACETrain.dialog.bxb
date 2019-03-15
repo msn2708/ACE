@@ -11,12 +11,5 @@ dialog (Result) {
       template ("ACE #{value(this.trainNumber)} is running late by #{value(this.lateBy)} minutes and is expected to reach #{value(this.nextStops[0].aceStopName)} at #{value(this.nextStops[0].actualTime)}")
     } 
   } 
-  else {
-    if(size(this) > 1) {
-      template (" ")
-    } else {
-      template (" ")
-    }
-  }
 } 
 

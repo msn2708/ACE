@@ -3,7 +3,7 @@ action (GetAceTrain) {
   description (__DESCRIPTION__)
 
   collect {
-    input (trainNumber) {
+    input (scheduleNumber) {
       type (ScheduleNumber)
       min (Optional) max (One)
     }
