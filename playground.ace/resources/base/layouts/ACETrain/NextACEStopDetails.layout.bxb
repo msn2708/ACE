@@ -12,96 +12,91 @@ layout-macro-def (next-acestop-details) {
         divider {}
         for-each (nextStops) {
           as(nextStop) {
-            image-card {
-              image-object-fit (Cover)
-              aspect-ratio (21:9)
-              image-url("/images/#{value(nextStop.aceStopName)}.jpg")
-              title-area {
-                halign (Start)
-                slot1 {
-                  text {
-                    value ("#{value(nextStop.aceStopName)}")
-                    style(Title_L)
-                  }
-                }
-              }
-              text-position (Overlay)            
-            }
 
-            // title-area {
-            //   halign (Start)
-            //   slot1 {
-            //     text {
-            //       value ("#{value(nextStop.aceStopName)}")
-            //       style(Title_L)
-            //     }
-            //   }
-            // }
-
-            hbox {
+            compound-card {
               content {
-                vbox {
-                  content {
-                    text {
-                      value ("Arriving in")
-                      style (Detail_L_Soft)
+                image-card {
+                  image-object-fit (Cover)
+                  aspect-ratio (21:9)
+                  image-url("/images/#{value(nextStop.aceStopImageName)}.jpg")
+                  aria-label (Hello)
+                  title-area {
+                    halign (Start)
+                    slot1 {
+                      text {
+                        value ("#{value(nextStop.aceStopName)}")
+                        style(Title_L)
+                      }
                     }
                   }
-                  halign (Start)
+                  text-position (Overlay)            
                 }
-                vbox {
-                  halign (End)
-                  content {
-                    text {
-                      value("#{value(nextStop.timeToNextStop)} minutes")
-                      style (Detail_L_Soft)
-                    }
-                  }
-                }
-              }
-            }
 
-            hbox {
-              content {
-                vbox {
+                hbox {
                   content {
-                    text {
-                      value ("Scheduled Time")
-                      style(Detail_L_Soft)
+                    vbox {
+                      content {
+                        text {
+                          value ("Arriving in")
+                          style (Detail_L_Soft)
+                        }
+                      }
+                      halign (Start)
+                    }
+                    vbox {
+                      halign (End)
+                      content {
+                        text {
+                          value("#{value(nextStop.timeToNextStop)} minutes")
+                          style (Detail_L_Soft)
+                        }
+                      }
                     }
                   }
-                  halign (Start)
                 }
-                vbox {
-                  halign (End)
-                  content {
-                    text {
-                      value("#{value(nextStop.scheduledTime)}")
-                      style(Detail_L_Soft)
-                    }
-                  }
-                }
-              }
-            }
 
-
-            hbox {
-              content {
-                vbox {
+                hbox {
                   content {
-                    text {
-                      value ("ETA")
-                      style(Detail_L_Soft)
+                    vbox {
+                      content {
+                        text {
+                          value ("Scheduled Time")
+                          style(Detail_L_Soft)
+                        }
+                      }
+                      halign (Start)
+                    }
+                    vbox {
+                      halign (End)
+                      content {
+                        text {
+                          value("#{value(nextStop.scheduledTime)}")
+                          style(Detail_L_Soft)
+                        }
+                      }
                     }
                   }
-                  halign (Start)
                 }
-                vbox {
-                  halign (End)
+
+                hbox {
                   content {
-                    text {
-                      value("#{value(nextStop.actualTime)}")
-                      style(Detail_L_Soft)
+                    vbox {
+                      content {
+                        text {
+                          value ("ETA")
+                          style(Detail_L_Soft)
+                        }
+                      }
+                      halign (Start)
+                    }
+                    vbox {
+                      halign (End)
+                      content {
+                        text {
+                          value("#{value(nextStop.actualTime)}")
+                          style(Detail_L_Soft)
+                        }
+                      }
                     }
                   }
                 }
@@ -109,6 +104,9 @@ layout-macro-def (next-acestop-details) {
             }
 
             divider {
+            }
+            divider {
+
             }
           }
         }

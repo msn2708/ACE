@@ -11,6 +11,11 @@ structure (NextAceStop) {
     min (Required) max (One)
   }
   
+  property (aceStopImageName) {
+    type (AceStopImageName)
+    min (Required) max (One)
+  }
+  
   property (scheduledTime) {
     type (ScheduledTime)
     min (Required) max(One)

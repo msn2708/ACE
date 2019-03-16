@@ -55,13 +55,13 @@ layout-macro-def (acetrain-details) {
               }
             }
 
-            map-card {          
-              size (M)
+            map-card {
+              aspect-ratio (4:3)
               title-area{
                 halign (Start)
                 slot1 {
                   text {
-                    value ("")
+                    value ("Current location")
                   }
                 }
               }

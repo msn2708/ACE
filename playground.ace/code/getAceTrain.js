@@ -1,6 +1,7 @@
 var ACETRAINSLIST = require("./lib/aceTrains");
 var config = require("config");
 var console = require("console");
+var dates = require("dates")
 
 var http = require ('http');
 
@@ -28,9 +29,9 @@ module.exports.function = function getVehicle (scheduleNumber,$vivContext) {
     for (var z=0; z<trains.length; z++) {
       if(trainNumber) {
         var train = getObject (trains[z],'scheduleNumber',trainNumber)
-        } else {
-          var train = trains[z]
-          }
+      } else {
+        var train = trains[z]
+      }
       if(train != null) {
         if(train.length > 1) {
           //we have a problem
@@ -58,12 +59,13 @@ module.exports.function = function getVehicle (scheduleNumber,$vivContext) {
           var nextStops = new Array ()
           var i = 0
           for (var k=0; k < trains[z].minutesToNextStops.length; k++) {
-
+            
             var nextStop = {}
             nextStop.timeToNextStop = trains[z].minutesToNextStops[k].minutes
             nextStop.scheduledTime = parseAceTime(trains[z].minutesToNextStops[k].schedule)
             nextStop.actualTime = parseAceTime(trains[z].minutesToNextStops[k].time)
             nextStop.aceStopName = getStopName(trains[z].minutesToNextStops[k].stopID)
+            nextStop.aceStopImageName = getStopName(trains[z].minutesToNextStops[k].stopID).replace(' ', '_')
 
             nextStops[i++] = nextStop
           }
@@ -129,60 +131,16 @@ function getAceTrain (train) {
       }
     }
   }
-
-
-
-
-  //   aceTrain["location"] = {latitude:train.lat, longitude:train.lng}
-  // 
-  // 
-  //   switch(train.inService) {
-  //     case '1': aceTrain["inService"] = true;
-  //       break;
-  //     default: aceTrain["inService"] = false;
-  //       break;
-  //   }
-  //   aceTrain["trainNumber"] = train.scheduleNumber
-  // 
-  // 
-  //   if (train.onSchedule < 0) {
-  //     aceTrain["onTime"] = false
-  //     aceTrain["lateBy"] = train.onSchedule * -1
-  //   } else {
-  //     aceTrain["onTime"] = true
-  //     aceTrain["lateBy"] = 0
-  //   }
-  // 
-  //   var nextStops = new Array ()
-  //   var i = 0
-  // 
-  //   console.log(train.minutesToNextStops)
-  // 
-  //   for (var nextStop in train.minutesToNextStops) {
-  //     console.log('Came here:' + nextStop.minutes)
-  //     nextStops[i++] = getAceStop(nextStop)
-  //   }
-  // 
-  //   aceTrain["nextStops"] = nextStops
-
-
-
+  
   return aceTrain
 }
 
 function getAceStop (stop) {
-  //   var aceStop = {}
-  // 
-  //   aceStop["timeToNextStop"] = stop.minutes
-  //   aceStop["aceStopName"] = getStopName(stop.id)
-  //   aceStop["scheduledTime"] = parseAceTime(stop.schedule)
-  //   aceStop["actualTime"] = parceAceTime(stop.time)
-  // 
-  //   return aceStop
-  return {timeToNextStop:stop["minutes"],
-          aceStopName:getStopName(stop.stopID),
-          scheduledTime:parseAceTime(stop["schedule"]),
-          actualTime:parseAceTime(stop["time"]) 
+  return {  
+           timeToNextStop:stop["minutes"],
+           aceStopName:getStopName(stop.stopID),
+           scheduledTime:parseAceTime(stop["schedule"]),
+           actualTime:parseAceTime(stop["time"]),
          }
 }
 
